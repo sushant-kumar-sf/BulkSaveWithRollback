@@ -8,6 +8,7 @@ const UPDATE = "update";
 const DELETE = "delete";
 const UNDELETE = "undelete";
 
+// Record get processed in configured order. Here Contact will be first processed then Account
 const OBJECT_CONFIGS = [
     { sObjectType: CONTACT_TYPE, client: getSFClient(saveContactRecords), chunkSize: 8000 },
     { sObjectType: ACCOUNT_TYPE, client: getSFClient(saveAccountRecords), chunkSize: 100 }
